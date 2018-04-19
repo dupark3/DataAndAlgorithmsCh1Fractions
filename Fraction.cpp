@@ -5,7 +5,7 @@
 
 using namespace std;
 
-void factor(Fraction& fraction){
+void Fraction::factor(){
     if (denominator == 0){
         throw domain_error("Can't factor a fraction with 0 as the denominator");
     } else if (numerator >= denominator && numerator % denominator == 0){
@@ -40,19 +40,19 @@ int find_common_factor(int x, int y){
     return common_factor;
 }
 
-
-Fraction& operator+(const Fraction& fraction1, const Fraction& fraction2){
-
-}
-
-Fraction& operator-(const Fraction& fraction1, const Fraction& fraction2){
+/*
+Fraction& operator+(const Fraction& fraction){
 
 }
 
-Fraction& operator*(const Fraction& fraction1, const Fraction& fraction2){
+Fraction& operator-(const Fraction& fraction){
 
 }
 
-Fraction& operator/(const Fraction& fraction1, const Fraction& fraction2){
+Fraction& operator*(const Fraction& fraction){
 
 }
+
+Fraction& operator/(const Fraction& fraction){
+
+}*/
