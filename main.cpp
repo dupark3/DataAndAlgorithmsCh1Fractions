@@ -21,9 +21,11 @@ int main(){
     cout << fraction5 << '\n';
     cout << fraction6 << '\n';
 
-
-    // I/O overload
-
+    Fraction fraction7;
+    cout << "Enter a new fraction with the format n/d: ";
+    cin >> fraction7;
+    fraction7.factor();
+    cout << "After factoring, the fraction you entered is: " << fraction7 << '\n';
 
     return 0;
 }

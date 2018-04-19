@@ -1,13 +1,12 @@
 #include <cmath> // abs()
+#include <cstdio> // getline()
 #include <iostream>
 #include <vector>
+#include <string>
 
 #include "Fraction.h"
 
 using namespace std;
-
-
-// TODO : 25/15 should factor, but it doesn't right now
 
 void Fraction::factor(){
     if (denominator == 0){
@@ -21,9 +20,6 @@ void Fraction::factor(){
     }
     check_signs();
 }
-
-
-// TODO : support negative factoring
 
 int find_common_factor(int x, int y){
     int common_factor = 0;
@@ -89,7 +85,18 @@ Fraction& operator/(const Fraction& fraction1, const Fraction& fraction2){
     return *new_fraction;
 }
 
-std::ostream& operator<<(std::ostream& os, const Fraction& fraction){
+ostream& operator<<(ostream& os, const Fraction& fraction){
     os << fraction.numerator << '/' << fraction.denominator;
     return os;
+}
+
+istream& operator>>(istream& is, Fraction& fraction){
+    string s;
+    getline(is, s);
+
+    // find the divide character at or after index 1
+    size_t divide_sign_position = s.find('/', 1);
+    fraction.numerator = stoi(s.substr(0, divide_sign_position));
+    fraction.denominator = stoi(s.substr(divide_sign_position + 1));
+    return is;
 }
