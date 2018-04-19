@@ -7,16 +7,17 @@ class Fraction{
 public:
     Fraction() : numerator(0), denominator(0) { }
     Fraction(int n, int d) : numerator(n), denominator(d) { }
+    // assignment operator, copy constructor, destructor, the BIG THREE
 
     void factor();
     void print(std::ostream& os){
         os << numerator << '/' << denominator << '\n';
     }
     
-    Fraction& operator+(const Fraction&);
-    Fraction& operator-(const Fraction&);
-    Fraction& operator*(const Fraction&);
-    Fraction& operator/(const Fraction&);
+    friend Fraction& operator+(const Fraction&, const Fraction&);
+    friend Fraction& operator-(const Fraction&, const Fraction&);
+    friend Fraction& operator*(const Fraction&, const Fraction&);
+    friend Fraction& operator/(const Fraction&, const Fraction&);
 
 
     /* 
@@ -35,5 +36,9 @@ private:
 };
 
 int find_common_factor(int, int);
+Fraction& operator+(const Fraction&, const Fraction&);
+Fraction& operator-(const Fraction&, const Fraction&);
+Fraction& operator*(const Fraction&, const Fraction&);
+Fraction& operator/(const Fraction&, const Fraction&);
 
 #endif
