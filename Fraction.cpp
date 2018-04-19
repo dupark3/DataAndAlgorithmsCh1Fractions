@@ -96,7 +96,11 @@ istream& operator>>(istream& is, Fraction& fraction){
 
     // find the divide character at or after index 1
     size_t divide_sign_position = s.find('/', 1);
+
+    // numerator is from the beginning of the string to the divide sign position (excluding the '/')
     fraction.numerator = stoi(s.substr(0, divide_sign_position));
+
+    // denominator is from one past the divide sign position to the end of the string
     fraction.denominator = stoi(s.substr(divide_sign_position + 1));
     return is;
 }
