@@ -12,8 +12,9 @@ public:
     void print(std::ostream& os){
         os << numerator << '/' << denominator << '\n';
     }
-    /*
+    
     Fraction& operator+(const Fraction&);
+    /*
     Fraction& operator-(const Fraction&);
     Fraction& operator*(const Fraction&);
     Fraction& operator/(const Fraction&);
