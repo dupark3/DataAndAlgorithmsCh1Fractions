@@ -19,6 +19,7 @@ void Fraction::factor(){
             denominator = denominator / common_factor;
         }
     }
+    check_signs();
 }
 
 
@@ -43,6 +44,13 @@ int find_common_factor(int x, int y){
     }
 
     return common_factor;
+}
+
+void Fraction::check_signs(){
+    if (denominator < 0){
+        numerator = -numerator;
+        denominator = -denominator;
+    } 
 }
 
 
@@ -79,4 +87,9 @@ Fraction& operator/(const Fraction& fraction1, const Fraction& fraction2){
     Fraction* new_fraction = new Fraction(new_numerator, new_denominator);
     new_fraction->factor();
     return *new_fraction;
+}
+
+std::ostream& operator<<(std::ostream& os, const Fraction& fraction){
+    os << fraction.numerator << '/' << fraction.denominator;
+    return os;
 }

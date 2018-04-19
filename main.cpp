@@ -5,31 +5,23 @@
 using namespace std;
 
 int main(){
-    // constructors
-    Fraction fraction1(1, 3);
+    cout << "Constructors called" << '\n';
+    Fraction fraction1(-1, -3);
     Fraction fraction2(-5, 25);
-    fraction1.print(cout);
-    fraction2.print(cout);
-
-    Fraction fraction3 = fraction1 + fraction2;
-    fraction3.print(cout);
-
-    Fraction fraction4 = fraction1 - fraction2;
-    fraction4.print(cout);
-
-    Fraction fraction5 = fraction1 * fraction2;
-    fraction5.print(cout);
-
-    Fraction fraction6 = fraction1 / fraction2;
-    fraction6.print(cout);
-
-    // assignment operator
-    // Fraction fraction3 = fraction1 + fraction2;
+    cout << fraction1 << '\n';
+    cout << fraction2 << '\n';
     
-    // copy constructor
-    // Fraction fraction4(fraction3);
+    cout << '\n' << "Arithmetic operators" << '\n';
+    Fraction fraction3 = fraction1 + fraction2;
+    Fraction fraction4 = fraction1 - fraction2;
+    Fraction fraction5 = fraction1 * fraction2;
+    Fraction fraction6 = fraction1 / fraction2;
+    cout << fraction3 << '\n';
+    cout << fraction4 << '\n';
+    cout << fraction5 << '\n';
+    cout << fraction6 << '\n';
 
-    // addtiion, subtraction, division, multiplication overload
+
     // I/O overload
 
 
