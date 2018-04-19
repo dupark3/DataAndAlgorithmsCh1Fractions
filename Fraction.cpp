@@ -49,15 +49,20 @@ Fraction& Fraction::operator+(const Fraction& fraction){
     return *new_fraction;
 }   
 
+
+Fraction& Fraction::operator-(const Fraction& fraction){
+    int new_numerator = (numerator * fraction.denominator) - (fraction.numerator * denominator);
+    int new_denominator = denominator * fraction.denominator;
+    Fraction* new_fraction = new Fraction(new_numerator, new_denominator);
+    new_fraction->factor();
+    return *new_fraction;
+}
+
 /*
-Fraction& operator-(const Fraction& fraction){
+Fraction& Fraction::operator*(const Fraction& fraction){
 
 }
 
-Fraction& operator*(const Fraction& fraction){
-
-}
-
-Fraction& operator/(const Fraction& fraction){
+Fraction& Fraction::operator/(const Fraction& fraction){
 
 }*/

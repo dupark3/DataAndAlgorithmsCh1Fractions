@@ -7,15 +7,15 @@ class Fraction{
 public:
     Fraction() : numerator(0), denominator(0) { }
     Fraction(int n, int d) : numerator(n), denominator(d) { }
-
+     
     void factor();
     void print(std::ostream& os){
         os << numerator << '/' << denominator << '\n';
     }
     
     Fraction& operator+(const Fraction&);
-    /*
     Fraction& operator-(const Fraction&);
+    /*
     Fraction& operator*(const Fraction&);
     Fraction& operator/(const Fraction&);
     */
