@@ -29,4 +29,6 @@ private:
 
 };
 
+int find_common_factor(int, int);
+
 #endif
